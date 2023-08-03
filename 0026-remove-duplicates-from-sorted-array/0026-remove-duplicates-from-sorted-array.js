@@ -3,7 +3,6 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-
     let i = 0;
     for(let j =1; j < nums.length; j++){
         // replacing the original array and checking for duplicates
