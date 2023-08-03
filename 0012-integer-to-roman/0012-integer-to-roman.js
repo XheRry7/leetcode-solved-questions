@@ -91,6 +91,5 @@ var intToRoman = function (num) {
     let res = Convertor(newNumber);
   }
 
-  console.log("finalNum::::", finalNum.join(""));
   return finalNum.join("");
 };
