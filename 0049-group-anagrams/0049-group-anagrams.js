@@ -11,7 +11,6 @@ var groupAnagrams = function(strs) {
         if(!map[x]) map[x] = []
         map[x].push(str)
     }
-    console.log(map)
     return Object.values(map)
 };
     
