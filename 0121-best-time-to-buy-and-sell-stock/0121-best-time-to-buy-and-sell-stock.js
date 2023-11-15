@@ -3,14 +3,18 @@
  * @return {number}
  */
 var maxProfit = function(prices) {
-    let maxProfit = 0;
-  let currentProfit = 0;
+  let left = 0; // Buy
+  let right = 1; // sell
+  let max_profit = 0;
+  while (right < prices.length) {
+    if (prices[left] < prices[right]) {
+      let profit = prices[right] - prices[left]; // our current profit
 
-  for (let i = 1; i < prices.length; i++) {
-    const difference = prices[i] - prices[i - 1];
-    currentProfit = Math.max(currentProfit + difference, 0);
-    maxProfit = Math.max(maxProfit, currentProfit);
+      max_profit = Math.max(max_profit, profit);
+    } else {
+      left = right;
+    }
+    right++;
   }
-
-  return maxProfit;
-}
+  return max_profit;
+};
